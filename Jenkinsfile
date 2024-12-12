@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Build') {
             when{
-                branch 'Production'
+                expression{env.GIT_BRANCH!="origin/main"}
             }
             steps {
                 sh 'echo This is build'  
