@@ -18,5 +18,12 @@ pipeline {
                 sh 'echo this is deploy'
             }
         }
+
+    }
+    post{
+        always{
+            echo "This section runs always"
+            deleteDir()
+        }
     }
 }
