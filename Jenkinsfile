@@ -18,6 +18,9 @@ pipeline {
     }
     stages {
         stage('Build') {
+            when{
+                branch 'Production'
+            }
             steps {
                 sh 'echo This is build'  
                 // sh 'sleep 10'
